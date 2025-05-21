@@ -13,7 +13,6 @@ const getTenant = () => {
 export default <RouterConfig>{
 	routes(routes) {
 		const tenant = getTenant()
-		console.log(routes)
 		return routes
 			.filter((route) => tenant ? isTenantRoute(route) : !isTenantRoute(route))
 			.map(normalizeRoute)
